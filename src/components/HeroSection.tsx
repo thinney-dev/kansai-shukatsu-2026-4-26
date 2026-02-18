@@ -67,8 +67,8 @@ const HeroSection = () => {
           {/* デロイト参戦テキスト */}
           <div className="mt-3 md:mt-4 flex flex-col items-center w-full animate-in fade-in zoom-in duration-1000 delay-400">
              <p className="text-base md:text-xl font-serif font-bold text-[#0B1E46] tracking-wide leading-tight drop-shadow-sm flex flex-wrap items-baseline justify-center gap-1">
-                <span>外資系コンサル</span>
-                <span className="text-[#B8860B] text-lg md:text-2xl mx-1">デロイト トーマツ</span>
+                <span></span>
+                <span className="text-[#B8860B] text-lg md:text-2xl mx-1">業界最大手企業</span>
                 <span>参加決定</span>
              </p>
           </div>
