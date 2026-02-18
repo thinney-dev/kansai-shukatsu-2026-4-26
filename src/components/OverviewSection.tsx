@@ -4,7 +4,7 @@ const OverviewSection = () => {
   const overviewItems = [
     {
       label: "開催日時",
-      content: "2026/03/28 (Sat) 14:15 ~ 17:45"
+      content: "2026/04/26 (日) 14:15 ~ 17:45"
     },
     {
       label: "開催場所",
@@ -12,13 +12,13 @@ const OverviewSection = () => {
         <div className="space-y-4">
           <div>
             {/* ▼▼▼ 修正箇所：施設名・住所・アクセスを更新 ▼▼▼ */}
-            <p className="font-bold mb-1">ミーティングスペースAP大阪茶屋町ルームF</p>
+            <p className="font-bold mb-1">調整中</p>
             <p className="text-sm text-slate-500">
-              〒530-0013 大阪府大阪市北区茶屋町１−２７ ABC-MART梅田ビル 8F
+              調整中
             </p>
             <p className="text-xs text-[#B8860B] mt-1 flex items-center gap-1 font-bold">
               <MapPin className="w-3 h-3" />
-              大阪梅田駅 1分 / 大阪駅 3分
+              調整中
             </p>
           </div>
           {/* Googleマップ埋め込み */}

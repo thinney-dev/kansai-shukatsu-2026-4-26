@@ -81,7 +81,6 @@ const Index = () => {
   ];
 
   return (
-    // ▼ 修正1: 一番外側の背景を bg-transparent に変更
     <div className="flex min-h-screen w-full bg-transparent font-sans text-[#0B1E46] selection:bg-purple-100 relative justify-center">
       
       {/* スマホ用メニュー */}
@@ -107,6 +106,31 @@ const Index = () => {
                 className="w-full max-w-[80%] object-contain drop-shadow-xl transform hover:scale-105 transition-transform duration-500"
                 />
             </div>
+
+            {/* ▼▼▼ 追加: PC用 過去LPへのリンクバナー ▼▼▼ */}
+            <div className="w-full flex justify-center mb-6">
+              <a 
+                href="https://career-summit-2026-3-28.pages.dev"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative flex flex-col items-center justify-center w-full max-w-[85%] bg-white/90 backdrop-blur-sm border border-[#B8860B]/30 rounded-2xl p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+              >
+                {/* 装飾 */}
+                <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-bl from-[#B8860B]/15 to-transparent rounded-bl-2xl rounded-tr-2xl"></div>
+                
+                <span className="text-[10px] text-[#B8860B] font-bold tracking-widest mb-1 uppercase">
+                   Past Event
+                </span>
+                <span className="text-sm font-bold text-[#0B1E46] mb-1">
+                   前回（3月26日）の開催実績
+                </span>
+                <span className="inline-flex items-center text-xs font-bold text-purple-600 opacity-80 group-hover:opacity-100 transition-opacity">
+                  特設ページを見る <ExternalLink className="w-3 h-3 ml-1" />
+                </span>
+              </a>
+            </div>
+            {/* ▲▲▲ 追加ここまで ▲▲▲ */}
+
             <div className="w-full flex justify-center translate-y-12">
                 <CompanyInfoCard />
             </div>
@@ -114,7 +138,6 @@ const Index = () => {
       </aside>
 
       {/* メインコンテンツ */}
-      {/* ▼▼▼ 修正2: スマホでは透明(bg-transparent)にし、PC(lg:)の時だけ白背景＋ぼかしを適用 ▼▼▼ */}
       <main className="flex-1 lg:flex-1 min-w-0 relative z-20 shadow-none lg:shadow-2xl bg-transparent lg:bg-white/90 lg:backdrop-blur-md pb-32">
           
           <div id="top"><HeroSection /></div>
@@ -129,10 +152,32 @@ const Index = () => {
           <div id="overview"><OverviewSection /></div>
           <div id="faq"><FAQSection /></div>
 
-          {/* ▼ 修正3: スマホ下部のグレー背景を透明に変更 */}
-          <div className="lg:hidden w-full px-4 py-12 flex justify-center bg-transparent">
+          {/* ▼▼▼ 修正: スマホ下部（企業情報の上にバナーを追加） ▼▼▼ */}
+          <div className="lg:hidden w-full px-4 py-8 flex flex-col items-center gap-8 bg-transparent">
+            
+            {/* スマホ用 過去LPへのリンクバナー */}
+            <a 
+              href="https://career-summit-2026-3-28.pages.dev"
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group relative flex flex-col items-center justify-center w-full max-w-sm bg-white/90 backdrop-blur-sm border border-[#B8860B]/30 rounded-2xl p-5 shadow-sm active:scale-95 transition-all duration-300"
+            >
+              <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-bl from-[#B8860B]/15 to-transparent rounded-bl-2xl rounded-tr-2xl"></div>
+              <span className="text-[10px] text-[#B8860B] font-bold tracking-widest mb-1 uppercase">
+                  Past Event
+              </span>
+              <span className="text-base font-bold text-[#0B1E46] mb-1">
+                  前回（3月26日）の開催実績
+              </span>
+              <span className="inline-flex items-center text-sm font-bold text-purple-600">
+                特設ページを見る <ExternalLink className="w-4 h-4 ml-1" />
+              </span>
+            </a>
+
+            {/* 企業情報カード */}
             <CompanyInfoCard />
           </div>
+          {/* ▲▲▲ 修正ここまで ▲▲▲ */}
       </main>
 
       {/* 右カラム */}
