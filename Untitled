@@ -1,0 +1,16 @@
+# Career Summit 2026 公式サイト
+
+2026年3月28日(土)に開催されるキャリアイベントのランディングページです。
+
+## 開発環境
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+
+## デプロイ先
+Cloudflare Pages: https://career-summit-2026-3-28.pages.dev
+
+## 開発者
+- SF
+- THINNEY Inc.
