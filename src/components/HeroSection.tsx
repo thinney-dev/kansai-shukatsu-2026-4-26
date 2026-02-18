@@ -17,11 +17,7 @@ const HeroSection = () => {
   return (
     // ▼ 背景のグラデーション指定を削除し、透明(bg-transparent)に変更します
     <section className="relative w-full pt-6 pb-16 overflow-hidden bg-transparent">
-      {/* 背景装飾 */}
-      {/* ▼▼▼ 修正2: 不透明度を上げてドット柄を見えやすくする (opacity-30 → opacity-50) ▼▼▼ */}
-      <div className="absolute inset-0 opacity-50 pointer-events-none" 
-           style={{ backgroundImage: 'radial-gradient(#cbd5e1 1px, transparent 1px)', backgroundSize: '30px 30px' }}>
-      </div>
+      
 
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
         
@@ -53,7 +49,7 @@ const HeroSection = () => {
              <div className="inline-flex items-center gap-2 md:gap-3">
                 <CalendarClock className="w-6 h-6 md:w-8 md:h-8 text-[#B8860B] drop-shadow-sm" />
                 <span className="text-2xl md:text-3xl font-serif font-bold text-[#0B1E46] tracking-widest drop-shadow-sm">
-                   3/26<span className="text-lg md:text-xl mx-1 text-[#0B1E46] opacity-80">(日)</span>13:45~
+                   4/26<span className="text-lg md:text-xl mx-1 text-[#0B1E46] opacity-80">(土)</span>13:45~
                 </span>
              </div>
           </div>

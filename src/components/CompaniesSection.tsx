@@ -3,47 +3,47 @@ const CompaniesSection = () => {
     
     { 
       id: 1, 
-      name: "デロイトトーマツ", 
-      tags: ["コンサル", "外資系"], 
-      logoImage: "/logo-Deloitte.png",
-      url: "https://www.deloitte.com/jp/ja/about/group/deloitte-tohmatsu-llc.html" 
+      name: "JCB", 
+      tags: ["業界", "タグ"], 
+      logoImage: "/logo-JCB.png",
+      url: "https://www.jcb.co.jp/?link_id=cojp_logo" 
     },
     { 
       id: 2, 
-      name: "シンプレクス", 
-      tags: ["ITコンサル"], 
-      logoImage: "/logo-Simplex.png",
-      url: "https://www.simplex.inc/" 
+      name: "旭化成", 
+      tags: ["業界", "タグ"], 
+      logoImage: "/logo-旭化成.png",
+      url: "https://www.asahi-kasei.com/jp/" 
     },
     
     { 
       id: 3, 
-      name: "ナハト", 
-      tags: ["マーケティング", ], 
-      logoImage: "/logo-ナハト.png",
-      url: "https://nahato.co.jp/"
+      name: "野村證券", 
+      tags: ["業界", "タグ"], 
+      logoImage: "/logo-野村證券.png",
+      url: "https://www.nomura.co.jp/"
     },
     { 
       id: 4, 
-      name: "RACE", 
-      tags: ["経営コンサル"], 
-      logoImage: "/logo-RACE.png",
-      url: "https://www.race.co.jp/"
+      name: "三井住友海上火災保険", 
+      tags: ["業界", "タグ"], 
+      logoImage: "/logo-三井住友海上火災保険.png",
+      url: "https://www.ms-ins.com/"
     },
     { 
       id: 5, 
-      name: "NES", 
-      tags: ["VC・支援"], 
-      logoImage: "/logo-NES.png",
-      url: "https://nes-net.jp/"
+      name: "ナハト", 
+      tags: ["業界", "タグ"], 
+      logoImage: "/logo-ナハト.png",
+      url: "https://nahato.co.jp/"
     },
     
     { 
       id: 6, 
-      name: "社名 6", 
+      name: "Any Mind", 
       tags: ["業界", "タグ"], 
-      logoText: "Coming soon",
-      url: "#" 
+      logoImage: "/logo-anymind.png",
+      url: "https://anymindgroup.com/ja/" 
     },
   ];
 
