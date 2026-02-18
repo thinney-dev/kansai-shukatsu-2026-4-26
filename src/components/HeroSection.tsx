@@ -59,7 +59,7 @@ const HeroSection = () => {
              <div className="inline-flex items-center gap-2">
                 <MapPin className="w-5 h-5 md:w-6 md:h-6 text-[#B8860B] drop-shadow-sm" />
                 <span className="text-lg md:text-xl font-serif font-bold text-[#0B1E46] tracking-wider drop-shadow-sm">
-                   AP大阪茶屋町 ルームF
+                   調整中
                 </span>
              </div>
           </div>
@@ -173,9 +173,7 @@ const HeroSection = () => {
                  
                  <div className="flex items-center w-full">
                     <p className="text-lg md:text-xl font-bold text-[#0B1E46] tracking-wide font-sans text-left leading-tight flex-1">
-                        選ばれし学生は海外渡航
-                        <br />
-                        インターン
+                        ４大外資コンサル認定団体への参加券獲得
                     </p>
                     
                     <span className="ml-3 text-[10px] md:text-[11px] font-bold text-white bg-[#B8860B] px-3 py-1 rounded-full shadow-sm tracking-wide whitespace-nowrap shrink-0">
