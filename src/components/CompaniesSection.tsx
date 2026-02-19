@@ -4,7 +4,7 @@ const CompaniesSection = () => {
     { 
       id: 1, 
       name: "JCB", 
-      tags: ["業界", "タグ"], 
+      tags: ["決済サービス", "国際ブランド"], 
       logoImage: "/logo-JCB.png",
       url: "https://www.jcb.co.jp/?link_id=cojp_logo" 
     },
@@ -13,28 +13,28 @@ const CompaniesSection = () => {
     { 
       id: 2, 
       name: "野村證券", 
-      tags: ["業界", "タグ"], 
+      tags: ["国内最大手証券",], 
       logoImage: "/logo-野村證券.png",
       url: "https://www.nomura.co.jp/"
     },
     { 
       id: 3, 
       name: "三井住友海上火災保険", 
-      tags: ["業界", "タグ"], 
+      tags: ["損害保険"], 
       logoImage: "/logo-三井住友海上火災保険.png",
       url: "https://www.ms-ins.com/"
     },
     { 
       id: 4, 
       name: "日本新薬", 
-      tags: ["業界", "タグ"], 
+      tags: ["医薬品"], 
       logoImage: "/logo-日本新薬.png",
       url: "https://www.nippon-shinyaku.co.jp/" 
     },
     { 
       id: 5, 
       name: "ナハト", 
-      tags: ["業界", "タグ"], 
+      tags: ["マーケティング"], 
       logoImage: "/logo-ナハト.png",
       url: "https://nahato.co.jp/"
     },
@@ -42,7 +42,7 @@ const CompaniesSection = () => {
     { 
       id: 6, 
       name: "Any Mind", 
-      tags: ["業界", "タグ"], 
+      tags: ["マーケティング",], 
       logoImage: "/logo-anymind.png",
       url: "https://anymindgroup.com/ja/" 
     },
