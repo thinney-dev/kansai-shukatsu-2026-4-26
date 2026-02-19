@@ -8,27 +8,28 @@ const CompaniesSection = () => {
       logoImage: "/logo-JCB.png",
       url: "https://www.jcb.co.jp/?link_id=cojp_logo" 
     },
-    { 
-      id: 2, 
-      name: "旭化成", 
-      tags: ["業界", "タグ"], 
-      logoImage: "/logo-旭化成.png",
-      url: "https://www.asahi-kasei.com/jp/" 
-    },
+    
     
     { 
-      id: 3, 
+      id: 2, 
       name: "野村證券", 
       tags: ["業界", "タグ"], 
       logoImage: "/logo-野村證券.png",
       url: "https://www.nomura.co.jp/"
     },
     { 
-      id: 4, 
+      id: 3, 
       name: "三井住友海上火災保険", 
       tags: ["業界", "タグ"], 
       logoImage: "/logo-三井住友海上火災保険.png",
       url: "https://www.ms-ins.com/"
+    },
+    { 
+      id: 4, 
+      name: "日本新薬", 
+      tags: ["業界", "タグ"], 
+      logoImage: "/logo-日本新薬.png",
+      url: "https://www.nippon-shinyaku.co.jp/" 
     },
     { 
       id: 5, 

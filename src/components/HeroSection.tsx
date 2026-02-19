@@ -15,10 +15,8 @@ const HeroSection = () => {
   ]);
 
   return (
-    // ▼ 背景のグラデーション指定を削除し、透明(bg-transparent)に変更します
     <section className="relative w-full pt-6 pb-16 overflow-hidden bg-transparent">
       
-
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
         
         {/* 画像バナー */}
@@ -59,7 +57,7 @@ const HeroSection = () => {
              <div className="inline-flex items-center gap-2">
                 <MapPin className="w-5 h-5 md:w-6 md:h-6 text-[#B8860B] drop-shadow-sm" />
                 <span className="text-lg md:text-xl font-serif font-bold text-[#0B1E46] tracking-wider drop-shadow-sm">
-                   調整中
+                AP大阪茶屋町 ルームH・I
                 </span>
              </div>
           </div>
@@ -76,14 +74,16 @@ const HeroSection = () => {
         </div>
 
 
-        {/* 企業ロゴを固定・カラーで表示 */}
-        <div className="w-full max-w-4xl mx-auto mb-12 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 px-2">
-           <img
-             src="/company-logos.png"
-             alt="Participating Companies"
-             className="w-full h-auto object-contain drop-shadow-sm"
-           />
+        {/* ▼▼▼ 修正：企業ロゴ（白背景を画面幅いっぱいにし、画像が見切れないよう配置） ▼▼▼ */}
+        <div className="w-screen md:w-full max-w-5xl mb-12 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 bg-white py-6 md:py-10 md:rounded-2xl border-y md:border border-slate-200/80 shadow-sm flex justify-center items-center">
+             <img
+               src="/logos_s.png"
+               alt="Participating Companies"
+               /* 画像の左右に余白(px-4)を持たせ、画面端で途切れるのを完全に防ぎます */
+               className="w-full max-w-4xl h-auto object-contain px-4 sm:px-6 md:px-8 mix-blend-multiply"
+             />
         </div>
+        {/* ▲▲▲ 修正ここまで ▲▲▲ */}
 
 
         {/* 写真エリアに目立たない枠を追加 */}
