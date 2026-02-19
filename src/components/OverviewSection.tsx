@@ -12,13 +12,13 @@ const OverviewSection = () => {
         <div className="space-y-4">
           <div>
             {/* ▼▼▼ 修正箇所：施設名・住所・アクセスを更新 ▼▼▼ */}
-            <p className="font-bold mb-1">調整中</p>
+            <p className="font-bold mb-1">ミーティングスペースAP大阪茶屋町ルームH・I</p>
             <p className="text-sm text-slate-500">
-              調整中
+              〒530-0013 大阪府大阪市北区茶屋町１−２７ ABC-MART梅田ビル 8F
             </p>
             <p className="text-xs text-[#B8860B] mt-1 flex items-center gap-1 font-bold">
               <MapPin className="w-3 h-3" />
-              調整中
+              大阪梅田駅 1分 / 大阪駅 3分
             </p>
           </div>
           {/* Googleマップ埋め込み */}

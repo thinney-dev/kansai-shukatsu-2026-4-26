@@ -68,7 +68,7 @@ const HeroSection = () => {
           <div className="mt-3 md:mt-4 flex flex-col items-center w-full animate-in fade-in zoom-in duration-1000 delay-400">
              <p className="text-base md:text-xl font-serif font-bold text-[#0B1E46] tracking-wide leading-tight drop-shadow-sm flex flex-wrap items-baseline justify-center gap-1">
                 <span></span>
-                <span className="text-[#B8860B] text-lg md:text-2xl mx-1">業界最大手企業</span>
+                <span className="text-[#B8860B] text-lg md:text-2xl mx-1">超有名企業</span>
                 <span>参加決定</span>
              </p>
           </div>
@@ -123,22 +123,23 @@ const HeroSection = () => {
           {/* Target */}
           <div className="flex-1 min-w-[140px] max-w-[240px] flex items-center bg-white border border-[#B8860B]/30 rounded-full px-3 py-2 shadow-sm whitespace-nowrap justify-center">
              <div className="w-8 h-8 rounded-full bg-[#0B1E46] flex items-center justify-center mr-2 text-white shrink-0">
-                <MapPin size={14} />
+                <Ticket size={14} />
              </div>
              <div className="text-left">
-                <p className="text-[9px] text-slate-400 font-bold tracking-widest uppercase">TARGET</p>
-                <p className="text-sm font-bold text-[#0B1E46]">京阪神大</p>
+                <p className="text-[9px] text-slate-400 font-bold tracking-widest uppercase">STYLE</p>
+                <p className="text-sm font-bold text-[#0B1E46]">招待制</p>
              </div>
           </div>
 
           {/* Style */}
           <div className="flex-1 min-w-[140px] max-w-[240px] flex items-center bg-white border border-[#B8860B]/30 rounded-full px-3 py-2 shadow-sm whitespace-nowrap justify-center">
              <div className="w-8 h-8 rounded-full bg-[#0B1E46] flex items-center justify-center mr-2 text-white shrink-0">
-                <Ticket size={14} />
+                <MapPin size={14} />
+          
              </div>
              <div className="text-left">
-                <p className="text-[9px] text-slate-400 font-bold tracking-widest uppercase">STYLE</p>
-                <p className="text-sm font-bold text-[#0B1E46]">招待制</p>
+                <p className="text-[9px] text-slate-400 font-bold tracking-widest uppercase">TARGET</p>
+                <p className="text-sm font-bold text-[#0B1E46]">京大・阪大・神大生</p>
              </div>
           </div>
         </div>
