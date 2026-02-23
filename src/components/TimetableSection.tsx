@@ -26,7 +26,7 @@ const TimetableSection = () => {
       description: "座談会よりもフランクな雰囲気で、社員様や他の参加学生と交流を深められます。"
     },
     {
-      time: "18:10",
+      time: "18:30",
       title: "閉会",
       description: ""
     }
