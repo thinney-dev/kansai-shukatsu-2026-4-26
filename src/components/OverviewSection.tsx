@@ -4,14 +4,13 @@ const OverviewSection = () => {
   const overviewItems = [
     {
       label: "開催日時",
-      content: "2026/04/26 (日) 14:15 ~ 17:45"
+      content: "2026/04/26 (日) 13:00 ~ 18:30"
     },
     {
       label: "開催場所",
       content: (
         <div className="space-y-4">
           <div>
-            {/* ▼▼▼ 修正箇所：施設名・住所・アクセスを更新 ▼▼▼ */}
             <p className="font-bold mb-1">ミーティングスペースAP大阪茶屋町ルームH・I</p>
             <p className="text-sm text-slate-500">
               〒530-0013 大阪府大阪市北区茶屋町１−２７ ABC-MART梅田ビル 8F
@@ -23,7 +22,6 @@ const OverviewSection = () => {
           </div>
           {/* Googleマップ埋め込み */}
           <div className="w-full h-48 bg-slate-100 rounded-lg overflow-hidden border border-slate-200">
-            {/* ▼▼▼ 修正箇所：iframeのsrcをご指示のリンクに変更 ▼▼▼ */}
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1640.0053472253137!2d135.49698449839477!3d34.7049102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e693c9434093%3A0x4ebbe9d36594c0a8!2z44Of44O844OG44Kj44Oz44Kw44K544Oa44O844K5QVDlpKfpmKrojLblsYvnlLo!5e0!3m2!1sja!2sjp!4v1769416781372!5m2!1sja!2sjp" 
               width="100%" 
