@@ -19,7 +19,47 @@ const BenefitsSection = () => {
     {
       id: 1,
       title: "不安を無くす事前個別面談",
-      description: "本イベントは選考式になっているため、事前に選考面談をします。また、当日の超優良企業と効率的にお話しするために現役の大学４年生があなたとともに対策します。",
+      // ▼▼▼ 文字列から、デザイン付きのJSXに変更 ▼▼▼
+      description: (
+        <div className="space-y-4">
+          <p className="leading-relaxed">
+            本イベントは選考式となっているため、事前にオンラインでの面談を実施します。<br />
+            面談は単なる選考ではなく、主催者とお話しすることで<strong>「就活における新しい発見」</strong>を得られる時間です。
+          </p>
+          
+          {/* メリットを強調する枠 */}
+          <div className="bg-white p-4 rounded-lg border border-[#C5A059]/30 shadow-sm relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-1 h-full bg-[#C5A059]"></div>
+            <p className="text-sm font-bold text-[#0B1E46] mb-1">💡 面談を受けるメリット</p>
+            <p className="text-xs md:text-sm leading-relaxed text-slate-600">
+              ヒアリングをもとに、知名度だけにとらわれない<strong>「あなたの志向性に本当に合った企業」</strong>をアドバイスします。事前に自分に合う企業を知ることで、当日は明確な目的意識を持って座談会に臨むことができます。
+            </p>
+          </div>
+
+          {/* 面談概要を見やすく整理 */}
+          <div className="bg-slate-100 p-4 rounded-lg text-xs md:text-sm text-slate-700">
+            <p className="font-bold text-[#0B1E46] mb-2 border-b border-slate-300 pb-1">＜面談概要＞</p>
+            <ul className="space-y-1 mb-3">
+              <li><span className="font-bold text-[#0B1E46]">◆ 形式：</span> オンライン</li>
+              <li><span className="font-bold text-[#0B1E46]">◆ 所要時間：</span> 15〜30分</li>
+            </ul>
+            <p className="font-bold text-[#0B1E46] mb-1">◆ 内容：</p>
+            <ul className="space-y-2 pl-2">
+              <li>
+                <span className="text-slate-500 text-[10px] mr-1">▼</span><strong className="text-[#0B1E46]">説明（5分程度）</strong>
+                <p className="pl-4 mt-0.5 text-slate-600">・今回のイベント内容<br/>・弊社の紹介（初めて面談する方のみ）</p>
+              </li>
+              <li>
+                <span className="text-slate-500 text-[10px] mr-1">▼</span><strong className="text-[#0B1E46]">ヒアリング（7分程度）</strong>
+                <p className="pl-4 mt-0.5 text-slate-600">・イベント参加の背景・目的<br/>・興味ある業界・職種等</p>
+              </li>
+              <li>
+                <span className="text-slate-500 text-[10px] mr-1">▼</span><strong className="text-[#0B1E46]">事務連絡（3分程度）</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      ),
       icon: UserCheck
     },
     {
@@ -125,9 +165,13 @@ const BenefitsSection = () => {
                     </div>
                 </AccordionTrigger>
                 
-                <AccordionContent className="px-4 pb-4 pt-0 text-slate-600 font-medium leading-relaxed pl-[4.5rem]">
+                <AccordionContent className="px-4 pb-4 pt-0 text-slate-600 font-medium pl-[4.5rem]">
                     <div className="border-t border-[#C5A059]/20 pt-3 mt-1">
-                        <p>{benefit.description}</p>
+                        
+                        {/* ▼▼▼ JSXも文字列も正しく表示されるように p タグを div に変更 ▼▼▼ */}
+                        <div className="text-sm md:text-base leading-relaxed">
+                          {benefit.description}
+                        </div>
                         
                         {/* noteがある場合のみ表示 */}
                         {benefit.note && (

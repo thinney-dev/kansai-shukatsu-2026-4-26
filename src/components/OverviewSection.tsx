@@ -63,7 +63,7 @@ const OverviewSection = () => {
     },
     {
       label: "服装",
-      content: "指定なし"
+      content: "オフィスカジュアル（綺麗め）な服装が好ましいです。"
     },
     {
       label: "持ち物",

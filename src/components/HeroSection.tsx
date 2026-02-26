@@ -9,6 +9,27 @@ const images = [
   "/Herosection-2.png"
 ];
 
+// ▼▼▼ 4月LP用：メイン企業ロゴとその他の企業名リスト ▼▼▼
+const mainCompanies = [
+  {
+    id: "logo1",
+    name: "JCB", // 1社目の社名
+    // ▼ publicフォルダにある1社目の画像ファイル名に書き換えてください
+    logoSrc: "/logo-JCB.png", 
+  },
+  {
+    id: "logo2",
+    name: "野村證券", // 2社目の社名
+    // ▼ publicフォルダにある2社目の画像ファイル名に書き換えてください
+    logoSrc: "/logo-野村證券.png",
+  },
+];
+
+const otherCompanies = [
+   "三井住友海上火災保険", "日本新薬", "株式会社ナハト", "AnyMind"
+];
+// ▲▲▲ 追加ここまで ▲▲▲
+
 const HeroSection = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 3000, stopOnInteraction: false })
@@ -65,13 +86,42 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* 企業ロゴ */}
-        <div className="w-screen md:w-full max-w-5xl mb-12 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 bg-white py-6 md:py-10 md:rounded-2xl border-y md:border border-slate-200/80 shadow-sm flex justify-center items-center">
-             <img
-               src="/logos_s.png"
-               alt="Participating Companies"
-               className="w-full max-w-4xl h-auto object-contain px-4 sm:px-6 md:px-8 mix-blend-multiply"
-             />
+        {/* 企業ロゴセクション */}
+        <div className="w-screen md:w-full max-w-5xl mb-12 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 bg-white py-6 md:py-8 md:rounded-2xl border-y md:border border-slate-200/80 shadow-sm flex flex-col justify-center items-center px-4 sm:px-8">
+            
+            {/* 上段：メインロゴ2社 */}
+            <div className="flex justify-center items-center gap-6 md:gap-12 w-full max-w-2xl mb-4 md:mb-6 px-2">
+               {mainCompanies.map((company) => (
+                 <div key={company.id} className="flex-1 flex justify-center">
+                   <img 
+                     src={company.logoSrc} 
+                     alt={`${company.name} ロゴ`}
+                     onError={(e) => {
+                       e.currentTarget.src = `https://placehold.co/400x160/e2e8f0/64748b?text=${encodeURIComponent(company.name)}`;
+                       e.currentTarget.className = "w-full max-w-[140px] md:max-w-[200px] h-auto object-contain opacity-70 rounded-md";
+                     }}
+                     // ▼▼▼ 修正: drop-shadow はつけず、mix-blend-multiply だけ復活させます ▼▼▼
+                     className="w-full max-w-[140px] md:max-w-[200px] h-auto object-contain mix-blend-multiply"
+                   />
+                 </div>
+               ))}
+            </div>
+
+            {/* 下段：その他の社名テキスト */}
+            <div className="w-full max-w-3xl flex flex-wrap justify-center items-center gap-x-3 gap-y-2 md:gap-x-6 md:gap-y-3">
+                {otherCompanies.map((name, index) => (
+                  <div key={index} className="flex items-center">
+                    <span className="text-xs md:text-sm font-bold text-[#0B1E46] whitespace-nowrap tracking-wide">
+                      {name}
+                    </span>
+                    {/* 最後の要素以外は区切り線を表示 */}
+                    {index < otherCompanies.length - 1 && (
+                      <span className="hidden md:inline-block ml-6 text-slate-300">/</span>
+                    )}
+                  </div>
+                ))}
+            </div>
+
         </div>
 
         {/* 写真エリア */}
@@ -117,7 +167,7 @@ const HeroSection = () => {
                </div>
             </div>
 
-            {/* Target - 改行して中央に、幅を中身に合わせる修正 */}
+            {/* Target */}
             <div className="col-span-2 flex justify-center">
               <div className="flex items-center bg-white border border-[#B8860B]/30 rounded-full px-8 py-2 shadow-sm whitespace-nowrap">
                  <div className="w-8 h-8 rounded-full bg-[#0B1E46] flex items-center justify-center mr-2 text-white shrink-0">
@@ -132,46 +182,6 @@ const HeroSection = () => {
 
           </div>
         </div>
-
-        {/* 3つの特権リスト */}
-        <div className="w-full max-w-[480px] mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 px-2 md:px-0">
-          <div className="flex items-center justify-center gap-4 mb-4">
-             <div className="h-[1px] w-8 md:w-12 bg-[#B8860B]/40"></div>
-             <h3 className="text-lg md:text-xl font-serif font-bold text-[#B8860B] tracking-wider whitespace-nowrap">
-               ▼ 参加者だけの「3つの特権」 ▼
-             </h3>
-             <div className="h-[1px] w-8 md:w-12 bg-[#B8860B]/40"></div>
-          </div>
-
-          <div className="flex flex-col space-y-3 px-2 md:px-4">
-               <div className="flex items-baseline border-b border-slate-200/60 pb-2">
-                 <span className="font-serif italic text-2xl md:text-3xl text-slate-300 mr-3 md:mr-5 font-light w-6 md:w-8 text-right shrink-0">1.</span>
-                 <span className="text-lg md:text-xl font-bold text-[#0B1E46] tracking-wide font-sans text-left leading-tight">
-                    京阪神大生を採用したい企業だけ
-                 </span>
-               </div>
-
-               <div className="flex items-start border-b border-slate-200/60 pb-2">
-                 <span className="font-serif italic text-2xl md:text-3xl text-slate-300 mr-3 md:mr-5 font-light w-6 md:w-8 text-right shrink-0 leading-none mt-1">2.</span>
-                 <div className="flex items-center w-full">
-                    <p className="text-lg md:text-xl font-bold text-[#0B1E46] tracking-wide font-sans text-left leading-tight flex-1">
-                        ４大外資コンサル認定団体への参加券獲得
-                    </p>
-                    <span className="ml-3 text-[10px] md:text-[11px] font-bold text-white bg-[#B8860B] px-3 py-1 rounded-full shadow-sm tracking-wide whitespace-nowrap shrink-0">
-                        無料
-                    </span>
-                 </div>
-               </div>
-
-               <div className="flex items-baseline pt-1">
-                 <span className="font-serif italic text-2xl md:text-3xl text-slate-300 mr-3 md:mr-5 font-light w-6 md:w-8 text-right shrink-0">3.</span>
-                 <span className="text-lg md:text-xl font-bold text-[#0B1E46] tracking-wide font-sans text-left leading-tight">
-                    経営幹部候補生として入社可能
-                 </span>
-               </div>
-          </div>
-        </div>
-
       </div>
     </section>
   );

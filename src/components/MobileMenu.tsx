@@ -4,17 +4,17 @@ import { Menu, X } from "lucide-react";
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // メニュー項目の定義
+  // ▼▼▼ 修正：メニュー項目の順番をご指定の通りに変更 ▼▼▼
   const menuItems = [
     { id: "top", label: "ページトップ", en: "TOP" },
     { id: "features", label: "イベントの特徴", en: "FEATURES" },
     { id: "companies", label: "出展企業", en: "COMPANIES" },
-    { id: "timetable", label: "タイムテーブル", en: "TIMETABLE" },
-    { id: "campaign", label: "キャンペーン", en: "CAMPAIGN" },
     { id: "benefits", label: "参加者限定 特別ルート", en: "SPECIAL ROUTE" },
-    { id: "voice", label: "学生の声", en: "VOICE" },
+    { id: "timetable", label: "タイムテーブル", en: "TIMETABLE" },
     { id: "participate", label: "参加方法", en: "HOW TO PARTICIPATE" },
+    { id: "campaign", label: "キャンペーン", en: "CAMPAIGN" },
     { id: "overview", label: "開催概要", en: "OVERVIEW" },
+    { id: "voice", label: "学生の声", en: "VOICE OF STUDENTS" },
     { id: "faq", label: "よくある質問", en: "FAQ" },
   ];
 
@@ -100,7 +100,7 @@ const MobileMenu = () => {
           <div className="mt-8 pb-8 space-y-4">
             <button
                 // ▼▼▼ リンク修正 ▼▼▼
-                onClick={() => window.open('https://forms.gle/xjLXrbdL2yo4htW48', '_blank')}
+                onClick={() => window.open('https://forms.gle/9RX66kmnapDjiokf9', '_blank')}
                 className="w-full bg-purple-600 text-white font-bold py-4 rounded-lg shadow-md active:scale-95 transition-transform"
             >
                 ENTRYはこちら
