@@ -26,7 +26,7 @@ const mainCompanies = [
 ];
 
 const otherCompanies = [
-   "三井住友海上火災保険", "日本新薬", "株式会社ナハト", "AnyMind"
+   "三井住友海上火災保険株式会社", "日本新薬株式会社", "株式会社ナハト", "AnyMind Group株式会社"
 ];
 // ▲▲▲ 追加ここまで ▲▲▲
 
