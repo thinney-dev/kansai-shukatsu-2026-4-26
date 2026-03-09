@@ -15,7 +15,8 @@ import CompanyInfoCard from "@/components/CompanyInfoCard";
 import StickyFooter from "@/components/StickyFooter";
 import MobileMenu from "@/components/MobileMenu";
 import CampaignSection from "@/components/CampaignSection";
-
+// ▼▼▼ 修正: 追加した「次回イベント」コンポーネントをインポート ▼▼▼
+import NextEventSection from "@/components/NextEventSection";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("top");
@@ -50,7 +51,6 @@ const Index = () => {
     return () => observer.disconnect();
   }, []);
 
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -68,7 +68,6 @@ const Index = () => {
     }
   };
 
-  // ▼▼▼ 修正：ナビゲーションメニューの順番をご指定の順に変更 ▼▼▼
   const navItems = [
     { id: "top", label: "ページトップ", en: "TOP" },
     { id: "features", label: "イベントの特徴", en: "FEATURES" },
@@ -102,9 +101,10 @@ const Index = () => {
       <aside className="hidden lg:flex flex-1 min-w-0 sticky top-0 h-screen flex-col justify-center items-center z-10 px-6">
         <div className="flex flex-col justify-between items-center w-full h-[75vh] min-h-[680px] py-10">
             <div className="flex-1 flex items-center justify-center w-full">
+                {/* ▼▼▼ 修正：alt属性を「関西就活 2026 ロゴ」に変更 ▼▼▼ */}
                 <img 
                 src="/image_0.png" 
-                alt="Career Summit 2026 Logo" 
+                alt="関西就活 2026 ロゴ" 
                 className="w-full max-w-[80%] object-contain drop-shadow-xl transform hover:scale-105 transition-transform duration-500"
                 />
             </div>
@@ -117,11 +117,10 @@ const Index = () => {
       {/* メインコンテンツ */}
       <main className="flex-1 lg:flex-1 min-w-0 relative z-20 shadow-none lg:shadow-2xl bg-transparent lg:bg-white/90 lg:backdrop-blur-md pb-32">
           
-          {/* ▼▼▼ 修正：メインコンテンツの表示順をナビゲーションに合わせて変更 ▼▼▼ */}
           <div id="top"><HeroSection /></div>
           
           <div id="features"><FeaturesSection /></div>
-          <TargetAudienceSection /> {/* 特徴セクションの直下に付随して表示 */}
+          <TargetAudienceSection /> 
           
           <div id="companies"><CompaniesSection /></div>
           
@@ -134,6 +133,9 @@ const Index = () => {
           <div id="campaign"><CampaignSection /></div>
           
           <div id="overview"><OverviewSection /></div>
+          
+          {/* ▼▼▼ 修正: 開催概要の下に「次回（5月）イベント案内」を配置 ▼▼▼ */}
+          <NextEventSection />
           
           <div id="voice"><VoiceSection /></div>
           

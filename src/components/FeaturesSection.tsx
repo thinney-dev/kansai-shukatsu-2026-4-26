@@ -3,8 +3,9 @@ import { Users, Building2, TrendingUp } from "lucide-react";
 const features = [
   {
     number: "01",
-    title: "京大・阪大・神大の学生限定",
-    description: "参加者を京都大学・大阪大学・神戸大学の学生に限定。同じような志を持つ、レベルの高い仲間と出会える貴重な機会です。",
+    // ▼▼▼ タイトルと説明文を3月版（ハイクラス・海外大・院生含む）に修正 ▼▼▼
+    title: "ハイクラス学生限定",
+    description: "参加者を 京大・阪大・神大・海外大・国公立大学院・海外大学院 の学生に限定。同じような志を持つ、レベルの高い仲間と出会える貴重な機会です。",
     icon: Users,
   },
   {
@@ -38,17 +39,15 @@ const FeaturesSection = () => {
           </span>
         </div>
 
-        {/* ▼▼▼ 修正箇所：メイン画像 ▼▼▼ */}
+        {/* メイン画像 */}
         {/* 幅制限と角丸を解除し、横幅いっぱいに表示 */}
         <div className="w-full mb-16">
             <img 
                 src="/FeaturesSection-1.png" 
                 alt="京阪神の大学風景とキャンパスライフ" 
-                // rounded-xl と shadow-lg を削除
                 className="w-full h-auto object-cover"
             />
         </div>
-        {/* ▲▲▲ 修正ここまで ▲▲▲ */}
 
         {/* 特徴カードリスト（ここにも左右のpaddingを入れる） */}
         <div className="flex flex-col gap-6 max-w-4xl mx-auto px-4">

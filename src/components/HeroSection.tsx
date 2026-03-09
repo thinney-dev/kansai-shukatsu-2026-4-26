@@ -100,8 +100,8 @@ const HeroSection = () => {
                        e.currentTarget.src = `https://placehold.co/400x160/e2e8f0/64748b?text=${encodeURIComponent(company.name)}`;
                        e.currentTarget.className = "w-full max-w-[140px] md:max-w-[200px] h-auto object-contain opacity-70 rounded-md";
                      }}
-                     // ▼▼▼ 修正: drop-shadow はつけず、mix-blend-multiply だけ復活させます ▼▼▼
-                     className="w-full max-w-[140px] md:max-w-[200px] h-auto object-contain mix-blend-multiply"
+                     // ▼▼▼ 修正: 3月版に合わせ、mix-blend-multiply を削除 ▼▼▼
+                     className="w-full max-w-[140px] md:max-w-[200px] h-auto object-contain"
                    />
                  </div>
                ))}
@@ -132,7 +132,7 @@ const HeroSection = () => {
                 <div className="flex-[0_0_100%] min-w-0 relative h-full" key={index}>
                   <img
                     src={src}
-                    alt={`Career Summit Scene ${index + 1}`}
+                    alt={`関西就活 Scene ${index + 1}`} // ▼▼▼ 修正: alt属性を変更 ▼▼▼
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -174,8 +174,9 @@ const HeroSection = () => {
                     <MapPin size={14} />
                  </div>
                  <div className="text-left">
+                    {/* ▼▼▼ 修正: 対象者の詳細を明記し、改行を追加 ▼▼▼ */}
                     <p className="text-[9px] text-slate-400 font-bold tracking-widest uppercase">TARGET</p>
-                    <p className="text-sm font-bold text-[#0B1E46]">京大・阪大・神大生</p>
+                    <p className="text-sm font-bold text-[#0B1E46]">京大・阪大・神大・海外大・<br />国公立大学院・海外大学院の28卒生</p>
                  </div>
               </div>
             </div>
