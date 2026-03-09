@@ -1,4 +1,4 @@
-# Career Summit 2026 公式サイト
+# 関西就活 2026/04/26 公式サイト
 
 2026年4月26日(日)に開催されるキャリアイベントのランディングページです。
 
@@ -9,7 +9,8 @@
 - Tailwind CSS
 
 ## デプロイ先
-Cloudflare Pages: https://career-summit-2026-3-28.pages.dev
+GitHub: https://github.com/thinney-inc/kansai-shukatsu-2026-4-26
+Cloudflare Pages: https://career-summit-2026-4-26.pages.dev
 
 ## 開発者
 - SF
