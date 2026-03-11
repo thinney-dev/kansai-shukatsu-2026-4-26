@@ -16,13 +16,12 @@ import StickyFooter from "@/components/StickyFooter";
 import MobileMenu from "@/components/MobileMenu";
 import CampaignSection from "@/components/CampaignSection";
 import NextEventSection from "@/components/NextEventSection";
-// 桜エフェクトのインポート
 import SakuraParticles from "@/components/SakuraParticles";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("top");
 
-  // スクロール連動機能（新しい順番に合わせてIDの配列も更新）
+  // スクロール連動機能
   useEffect(() => {
     const sectionIds = [
       "top", "features", "companies", "benefits", "timetable",
@@ -83,8 +82,8 @@ const Index = () => {
   ];
 
   return (
-    // ▼▼▼ 修正: overflow-hidden を追加し、画面外の横スクロールを防ぎます ▼▼▼
-    <div className="flex min-h-screen w-full bg-transparent font-sans text-[#0B1E46] selection:bg-purple-100 relative justify-center overflow-hidden">
+    // ▼ 修正: overflow-hidden を削除しました（stickyを妨害するため）
+    <div className="flex min-h-screen w-full bg-transparent font-sans text-[#0B1E46] selection:bg-purple-100 relative justify-center">
       
       {/* スマホ用メニュー */}
       <MobileMenu />
@@ -99,15 +98,14 @@ const Index = () => {
         }}
       ></div>
 
-      {/* ▼▼▼ 修正: 桜のエフェクトを追加（z-0の背景画像とz-10のコンテンツの間に配置） ▼▼▼ */}
+      {/* 桜のエフェクト */}
       <div className="fixed inset-0 z-[1] pointer-events-none">
         <SakuraParticles />
       </div>
-      {/* ▲▲▲ 修正ここまで ▲▲▲ */}
 
       {/* 左カラム */}
-      {/* ▼▼▼ 修正: relativeを追加して、桜（z-1）よりも手前に来るようにします ▼▼▼ */}
-      <aside className="hidden lg:flex flex-1 min-w-0 sticky top-0 h-screen flex-col justify-center items-center z-10 px-6 relative">
+      {/* ▼ 修正: relative を削除し、元々の sticky が効くように戻しました */}
+      <aside className="hidden lg:flex flex-1 min-w-0 sticky top-0 h-screen flex-col justify-center items-center z-10 px-6">
         <div className="flex flex-col justify-between items-center w-full h-[75vh] min-h-[680px] py-10">
             <div className="flex-1 flex items-center justify-center w-full">
                 <img 
@@ -123,30 +121,19 @@ const Index = () => {
       </aside>
 
       {/* メインコンテンツ */}
-      {/* relative z-20 なので、桜よりも手前に表示されます */}
       <main className="flex-1 lg:flex-1 min-w-0 relative z-20 shadow-none lg:shadow-2xl bg-transparent lg:bg-white/90 lg:backdrop-blur-md pb-32">
           
           <div id="top"><HeroSection /></div>
-          
           <div id="features"><FeaturesSection /></div>
           <TargetAudienceSection /> 
-          
           <div id="companies"><CompaniesSection /></div>
-          
           <div id="benefits"><BenefitsSection /></div>
-          
           <div id="timetable"><TimetableSection /></div>
-          
           <div id="participate"><ParticipateSection /></div>
-          
           <div id="campaign"><CampaignSection /></div>
-          
           <div id="overview"><OverviewSection /></div>
-          
           <NextEventSection />
-          
           <div id="voice"><VoiceSection /></div>
-          
           <div id="faq"><FAQSection /></div>
 
           {/* スマホ下部のグレー背景を透明に変更 */}
@@ -156,8 +143,8 @@ const Index = () => {
       </main>
 
       {/* 右カラム */}
-      {/* ▼▼▼ 修正: relativeを追加して、桜よりも手前に来るようにします ▼▼▼ */}
-      <aside className="hidden lg:flex flex-1 min-w-0 sticky top-0 h-screen flex-col justify-center pl-8 xl:pl-12 z-10 relative">
+      {/* ▼ 修正: relative を削除し、元々の sticky が効くように戻しました */}
+      <aside className="hidden lg:flex flex-1 min-w-0 sticky top-0 h-screen flex-col justify-center pl-8 xl:pl-12 z-10">
         <div className="w-full max-w-xs space-y-10">
             <nav className="space-y-5 border-l-2 border-slate-300 pl-6">
             {navItems.map((item) => (
@@ -200,7 +187,7 @@ const Index = () => {
         </div>
       </aside>
 
-      {/* ▼▼▼ 修正: スマホフッターも桜より手前に配置 ▼▼▼ */}
+      {/* スマホフッター */}
       <div className="lg:hidden relative z-50">
         <StickyFooter />
       </div>
