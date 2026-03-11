@@ -23,14 +23,12 @@ const SakuraParticles = () => {
         detectRetina: true,
         particles: {
           number: {
-            value: 30, // 花びらの数（増やしたい場合はここを調整）
-            // ▼ 修正: エラー解消のため area を削除
+            // ▼▼ 修正: 花びらの数を「30」から「45」に気持ち増やしました ▼▼
+            value: 45, 
             density: { enable: true }, 
           },
-          // ▼ 修正: 画像本来の色を出すために白（#ffffff）に戻します
           color: { value: "#ffffff" }, 
           shape: {
-            // ▼ 修正: 丸を消して、画像（桜）だけを降らせる設定にしました
             type: "image",
             options: {
               image: {
@@ -45,21 +43,22 @@ const SakuraParticles = () => {
             animation: { enable: true, speed: 0.5, sync: false },
           },
           size: {
-            value: { min: 10, max: 20 },
+            // ▼▼ 修正: 花びらのサイズを全体的に1.5倍ほど大きくしました ▼▼
+            value: { min: 18, max: 32 }, 
           },
           move: {
             enable: true,
-            speed: { min: 1, max: 3 }, // 落ちるスピード
+            speed: { min: 1, max: 3 }, 
             direction: "bottom",
             random: true,
-            straight: false, // ひらひらさせる
+            straight: false, 
             outModes: {
               default: "out",
               top: "none",
             },
           },
           rotate: {
-            value: { min: 0, max: 360 }, // くるくる回転させる
+            value: { min: 0, max: 360 }, 
             animation: { enable: true, speed: 5, sync: false },
           },
         },
