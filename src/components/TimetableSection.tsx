@@ -1,32 +1,32 @@
 const TimetableSection = () => {
   const schedule = [
     {
-      time: "12:45",
+      time: "13:45",
       title: "受付開始",
       description: ""
     },
     {
-      time: "13:15",
+      time: "14:15",
       title: "オープニング挨拶",
       description: ""
     },
     {
-      time: "13:20", 
+      time: "14:20", 
       title: "企業様ごとのピッチ",
       description: "各企業の事業内容や強み、本日の座談会で話せるテーマについてプレゼンいただきます。"
     },
     {
-      time: "14:35",
+      time: "15:20",
       title: "少人数座談会",
       description: "学生数名と企業担当者による濃密な座談会。ローテーション形式で全ての企業と話せます。"
     },
     {
-      time: "17:25",
+      time: "17:40",
       title: "懇親会",
       description: "座談会よりもフランクな雰囲気で、社員様や他の参加学生と交流を深められます。"
     },
     {
-      time: "18:30",
+      time: "18:45",
       title: "閉会",
       description: ""
     }
