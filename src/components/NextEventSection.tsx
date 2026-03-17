@@ -4,8 +4,10 @@ const NextEventSection = () => {
   return (
     <section className="py-8 px-4 relative z-10">
       <div className="max-w-3xl mx-auto">
+        
         {/* ▼▼▼ リンク先がないため、<a>タグではなく<div>タグに変更しています ▼▼▼ */}
-        <div className="block bg-gradient-to-br from-white to-purple-50/30 border border-[#B8860B]/30 shadow-sm rounded-2xl p-8 md:p-10 relative overflow-hidden">
+        {/* ここに mb-12 を追加して、下のSNSエリアとの隙間を作りました */}
+        <div className="block bg-gradient-to-br from-white to-purple-50/30 border border-[#B8860B]/30 shadow-sm rounded-2xl p-8 md:p-10 relative overflow-hidden mb-12">
           
           {/* キラキラ装飾 */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#B8860B]/10 to-transparent rounded-bl-full z-0 pointer-events-none"></div>
@@ -41,6 +43,49 @@ const NextEventSection = () => {
             
           </div>
         </div>
+
+        {/* ===== SNS導線 ===== */}
+        <div className="text-center flex flex-col items-center gap-5 bg-white py-8 px-6 rounded-2xl border border-slate-100 shadow-sm">
+          
+          {/* 説明 */}
+          <p className="text-sm md:text-base text-[#0B1E46] font-bold tracking-wide">
+            最新の登壇企業情報や就活対策はSNSで配信中！
+          </p>
+
+          {/* ボタン群 */}
+          <div className="flex flex-col sm:flex-row gap-4 w-full justify-center max-w-md">
+            
+            {/* X (旧Twitter) */}
+            <a
+              href="https://x.com/kansai_mlc?s=21&t=axJ02Uz3Tn08l-b1j33" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center px-6 py-4 rounded-xl bg-[#000000] hover:opacity-80 transition-opacity w-full group"
+            >
+              <img 
+                src="/logo-X.png" 
+                alt="Xロゴ" 
+                className="h-6 md:h-7 w-auto object-contain group-hover:scale-110 transition-transform" 
+              />
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/kansaishukatsu_mlc/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center px-6 py-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 hover:border-slate-300 transition-all w-full group shadow-sm"
+            >
+              <img 
+                src="/logo-instagram.png" 
+                alt="Instagramロゴ" 
+                className="h-7 md:h-8 w-auto object-contain group-hover:scale-110 transition-transform" 
+              />
+            </a>
+
+          </div>
+        </div>
+
       </div>
     </section>
   );
