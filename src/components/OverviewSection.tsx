@@ -68,7 +68,7 @@ const OverviewSection = () => {
     },
     {
       label: "持ち物",
-      content: "筆記用具、スマートフォン"
+      content: "学生証・筆記用具・スマートフォン"
     },
   ];
 
