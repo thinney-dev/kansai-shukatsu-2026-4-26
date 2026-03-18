@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { ChevronRight, Users, MapPin, Ticket, CalendarClock } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import React from "react";
 
 const images = [
   "/Herosection-4.png",

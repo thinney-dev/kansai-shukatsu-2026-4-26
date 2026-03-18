@@ -1,4 +1,5 @@
 import { CalendarDays, Clock } from "lucide-react";
+import React from "react";
 
 const NextEventSection = () => {
   return (

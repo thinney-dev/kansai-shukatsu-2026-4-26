@@ -1,4 +1,5 @@
 import { MapPin } from "lucide-react";
+import React from "react";
 
 const OverviewSection = () => {
   const overviewItems = [

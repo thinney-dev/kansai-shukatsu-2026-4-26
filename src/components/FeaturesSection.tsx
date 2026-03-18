@@ -1,4 +1,5 @@
 import { Users, Building2, TrendingUp } from "lucide-react";
+import React from "react";
 
 const features = [
   {

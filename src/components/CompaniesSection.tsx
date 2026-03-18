@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { X, ExternalLink, Building2, Lightbulb } from "lucide-react";
+import React from "react";
 
 const CompaniesSection = () => {
   const [selectedCompany, setSelectedCompany] = useState<any | null>(null);
