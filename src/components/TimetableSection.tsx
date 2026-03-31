@@ -3,7 +3,7 @@ import React from "react";
 const TimetableSection = () => {
   const schedule = [
     {
-      time: "13:45",
+      time: "14:00",
       title: "受付開始",
       description: ""
     },

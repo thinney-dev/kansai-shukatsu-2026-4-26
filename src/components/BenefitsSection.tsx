@@ -1,63 +1,25 @@
 import * as React from "react";
-import { UserCheck, Ticket, MessageCircle, ChevronDown } from "lucide-react";
+import { UserCheck, Ticket, MessageCircle, Gift, Users } from "lucide-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 
-// ▼ 外部のAccordion部品を使わず、自作のシンプルなアコーディオンコンポーネントを作成 ▼
-const SimpleAccordionItem = ({ benefit, isOpen, onClick }: { benefit: any, isOpen: boolean, onClick: () => void }) => {
-  return (
-    <div className={`bg-slate-50 border-2 border-[#C5A059]/40 rounded-xl overflow-hidden transition-colors ${isOpen ? 'bg-amber-50/30' : ''}`}>
-      <button 
-        onClick={onClick}
-        className="w-full px-4 py-4 flex items-center justify-between group text-left focus:outline-none"
-      >
-        <div className="flex items-center gap-4 w-full">
-          {/* アイコン */}
-          <div className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center shadow-md transition-colors duration-300 ${isOpen ? 'bg-[#C5A059]' : 'bg-[#0B1E46] group-hover:bg-[#C5A059]'}`}>
-            <benefit.icon className={`w-6 h-6 transition-colors duration-300 ${isOpen ? 'text-white' : 'text-[#C5A059] group-hover:text-white'}`} />
-          </div>
-
-          {/* タイトル＆ラベル */}
-          <div className="flex flex-col flex-1 pr-4">
-            <span className="text-[10px] font-bold text-white bg-[#C5A059] px-2 py-0.5 rounded-full w-fit mb-1">
-              特典 {benefit.id}
-            </span>
-            <span className="text-base md:text-lg font-serif font-bold text-[#0B1E46]">
-              {benefit.title}
-            </span>
-          </div>
-        </div>
-        
-        {/* 開閉アイコン */}
-        <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
-      </button>
-
-      {/* アコーディオンの中身（開いている時だけ表示） */}
-      <div 
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}
-      >
-        <div className="px-4 pb-4 pt-0 text-slate-600 font-medium pl-[4.5rem]">
-          <div className="border-t border-[#C5A059]/20 pt-4 mt-1">
-            <div className="text-sm md:text-base leading-relaxed">
-              {benefit.description}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 const BenefitsSection = () => {
-  // アコーディオンの開閉状態を管理するステート（最初は全部閉じておく）
-  const [openId, setOpenId] = React.useState<number | null>(null);
-
-  const toggleAccordion = (id: number) => {
-    setOpenId(openId === id ? null : id);
-  };
-
   const benefits = [
     {
       id: 1,
       title: "不安を無くす事前個別面談",
+      // ▼▼▼ 文字列から、デザイン付きのJSXに変更 ▼▼▼
       description: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -114,101 +76,116 @@ const BenefitsSection = () => {
     },
   ];
 
-  // ▼ 画像一覧（Carouselコンポーネントを使わず、CSSアニメーションで横スクロールを実装） ▼
-  const baseImages = [ "/gift-2.png", "/gift-3.png" ];
-  // ループが途切れないように画像をたくさん複製
-  const scrollingImages = [...baseImages, ...baseImages, ...baseImages, ...baseImages]; 
+  // 画像は適宜 public フォルダ内の実際のファイル名に合わせてください
+  const baseImages = [ "/gift-2.png", "/gift-3.png"];
+  // スクロールを滑らかにするために画像を複製
+  const benefitImages = [...baseImages, ...baseImages, ...baseImages]; 
+
+  const plugin = React.useRef(
+    AutoScroll({ 
+      speed: 1,
+      stopOnInteraction: false,
+      stopOnMouseEnter: true,
+    })
+  );
 
   return (
-    <section className="py-16 px-4 md:px-8 bg-white relative overflow-hidden">
-      
-      {/* 背景の装飾 */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-amber-50 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/3"></div>
-      
-      <div className="max-w-3xl mx-auto relative z-10">
+    <section className="py-10 px-4 md:px-8 bg-white relative">
+      <div className="max-w-3xl mx-auto">
         
         {/* セクションタイトル */}
-        <div className="text-center mb-10">
-           <h2 className="text-2xl md:text-3xl font-serif font-medium text-[#0B1E46] mb-3 tracking-wide">
+        <div className="text-center mb-8">
+           <h2 className="text-3xl md:text-4xl font-serif font-medium text-[#0B1E46] mb-2 tracking-wide">
              参加者限定 特別ルート
            </h2>
-           <p className="text-[#B8860B] font-serif italic text-xs tracking-widest uppercase mb-8">Special Route</p>
+           <p className="text-[#B8860B] font-serif italic text-sm tracking-widest uppercase mb-6">Special Route</p>
            
-           <p className="text-sm md:text-base font-bold text-[#0B1E46] mb-3 leading-relaxed">
-             <span className="inline-block">本気で就活に向き合う</span><span className="inline-block">あなたを支援します。</span>
+           <p className="text-base md:text-lg font-bold text-[#0B1E46] mb-2">
+             本気で就活に向き合うあなたを支援します。
+           </p>
+           
+           <p className="text-xs md:text-sm font-bold text-slate-500 mb-6">
+             クリックして詳細を確認できます
            </p>
 
-           {/* ▼ CSSアニメーションによる無限スクロール画像（エラーの元だったCarouselを排除） ▼ */}
-           <div className="w-full mb-8 relative group">
-             {/* 左右のフェードエフェクト */}
-             <div className="absolute top-0 left-0 w-8 md:w-16 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-             <div className="absolute top-0 right-0 w-8 md:w-16 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
-             
-             {/* スクロールコンテナ */}
-             <div className="flex overflow-hidden">
-               {/* 1つ目のスライドグループ */}
-               <div className="flex animate-[scroll_20s_linear_infinite] group-hover:[animation-play-state:paused] whitespace-nowrap">
-                 {scrollingImages.map((src, index) => (
-                   <div key={`first-${index}`} className="w-[280px] md:w-[350px] shrink-0 px-2">
-                     <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl border border-slate-100 shadow-sm">
+           {/* 画像スライダー（回転寿司風） */}
+           <div className="w-full mb-6 relative">
+             <Carousel
+               plugins={[plugin.current]}
+               className="w-full"
+               opts={{
+                 align: "start",
+                 loop: true,
+                 dragFree: true,
+               }}
+             >
+               <CarouselContent className="-ml-4">
+                 {benefitImages.map((src, index) => (
+                   <CarouselItem key={index} className="pl-4 basis-[80%] md:basis-1/2">
+                     <div className="relative aspect-[16/9] w-full overflow-hidden">
                        <img
                          src={src}
                          alt={`特典イメージ`}
-                         className="object-cover w-full h-full"
-                         onError={(e) => {
-                           e.currentTarget.src = `https://placehold.co/600x338/f8fafc/475569?text=Gift+Image`;
-                         }}
+                         className="object-contain w-full h-full"
                        />
                      </div>
-                   </div>
+                   </CarouselItem>
                  ))}
-               </div>
-               {/* 2つ目のスライドグループ（ループを滑らかに繋ぐため） */}
-               <div className="flex animate-[scroll_20s_linear_infinite] group-hover:[animation-play-state:paused] whitespace-nowrap" aria-hidden="true">
-                 {scrollingImages.map((src, index) => (
-                   <div key={`second-${index}`} className="w-[280px] md:w-[350px] shrink-0 px-2">
-                     <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl border border-slate-100 shadow-sm">
-                       <img
-                         src={src}
-                         alt={`特典イメージ`}
-                         className="object-cover w-full h-full"
-                         onError={(e) => {
-                           e.currentTarget.src = `https://placehold.co/600x338/f8fafc/475569?text=Gift+Image`;
-                         }}
-                       />
-                     </div>
-                   </div>
-                 ))}
-               </div>
-             </div>
+               </CarouselContent>
+             </Carousel>
            </div>
 
-           <p className="text-[11px] md:text-xs font-bold text-slate-400">
-             ▼ クリックして詳細を確認できます
-           </p>
         </div>
 
-        {/* アコーディオンリスト（自作コンポーネントを使用） */}
-        <div className="space-y-4">
+        {/* アコーディオンリスト */}
+        <Accordion type="single" collapsible className="space-y-4">
           {benefits.map((benefit: any) => (
-            <SimpleAccordionItem 
-              key={benefit.id} 
-              benefit={benefit} 
-              isOpen={openId === benefit.id}
-              onClick={() => toggleAccordion(benefit.id)}
-            />
+            <AccordionItem 
+                key={benefit.id} 
+                value={`item-${benefit.id}`} 
+                className="bg-slate-50 border-2 border-[#C5A059]/40 rounded-xl px-0 data-[state=open]:bg-amber-50/30 transition-colors"
+            >
+                <AccordionTrigger className="px-4 py-4 hover:no-underline group text-left">
+                    <div className="flex items-center gap-4 w-full">
+                        
+                        {/* アイコン */}
+                        <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-[#0B1E46] flex items-center justify-center shadow-md group-hover:bg-[#C5A059] transition-colors duration-300">
+                            <benefit.icon className="w-6 h-6 text-[#C5A059] group-hover:text-white transition-colors duration-300" />
+                        </div>
+
+                        {/* タイトル＆ラベル */}
+                        <div className="flex flex-col">
+                            <span className="text-[10px] font-bold text-white bg-[#C5A059] px-2 py-0.5 rounded-full w-fit mb-1">
+                                特典 {benefit.id}
+                            </span>
+                            <span className="text-base md:text-lg font-serif font-bold text-[#0B1E46]">
+                                {benefit.title}
+                            </span>
+                        </div>
+                    </div>
+                </AccordionTrigger>
+                
+                <AccordionContent className="px-4 pb-4 pt-0 text-slate-600 font-medium pl-[4.5rem]">
+                    <div className="border-t border-[#C5A059]/20 pt-3 mt-1">
+                        
+                        {/* ▼▼▼ JSXも文字列も正しく表示されるように p タグを div に変更 ▼▼▼ */}
+                        <div className="text-sm md:text-base leading-relaxed">
+                          {benefit.description}
+                        </div>
+                        
+                        {/* noteがある場合のみ表示 */}
+                        {benefit.note && (
+                            <div className="mt-3 bg-[#FFF9E5] border border-[#FFE082] rounded-lg p-2 text-[#B8860B] font-bold text-[10px] md:text-xs text-center">
+                                {benefit.note}
+                            </div>
+                        )}
+                    </div>
+                </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
 
       </div>
-
-      {/* スクロールアニメーション用のCSS（JSX内に定義） */}
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-100%); }
-        }
-      `}} />
     </section>
   );
 };
