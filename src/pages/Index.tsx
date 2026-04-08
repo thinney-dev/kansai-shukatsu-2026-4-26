@@ -217,7 +217,7 @@ const Index = () => {
             <div className="space-y-3 pt-4">
                 <Button 
                     className="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold h-14 rounded shadow-lg transition-transform hover:scale-105 text-lg"
-                    onClick={() => window.open('https://forms.gle/s8GVFABW1TGciy3W9', '_blank')}
+                    onClick={() => window.open('https://forms.gle/xjLXrbdL2yo4htW48', '_blank')}
                 >
                     <span className="bg-white text-purple-600 text-xs px-2 py-0.5 rounded font-bold mr-3">簡単1分</span>
                     ENTRYはこちら
