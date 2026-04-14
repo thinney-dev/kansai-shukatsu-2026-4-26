@@ -7,7 +7,7 @@ const OverviewSection = () => {
       label: "開催日時",
       content: (
         <>
-          2026/04/26 (日) 14:15 ~ 18:45<br />
+          2026/04/26 (日) 14:15 ~ 19:00<br />
           <span className="text-sm mt-1 inline-block">受付開始14:00</span>
         </>
       )
