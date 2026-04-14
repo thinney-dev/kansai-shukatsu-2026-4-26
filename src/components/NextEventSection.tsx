@@ -11,12 +11,13 @@ const NextEventSection = () => {
           target="_blank"
           rel="noopener noreferrer"
           
-          className="block bg-gradient-to-br from-white to-[#cedef9]/30 border border-[#B8860B]/30 shadow-sm hover:shadow-lg rounded-2xl p-8 md:p-10 relative overflow-hidden mb-8 transition-all duration-300 group hover:-translate-y-1"
+          /*外枠*/
+          className="block bg-gradient-to-br from-white to-[#cedef9]/30 border border-[#81c5fc]/60 shadow-sm hover:shadow-lg rounded-2xl p-8 md:p-10 relative overflow-hidden mb-8 transition-all duration-300 group hover:-translate-y-1"
         >
           
-          {/* ▼ 修正：キラキラ装飾の左下部分を #cedef9 系に変更 ▼ */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#B8860B]/10 to-transparent rounded-bl-full z-0 pointer-events-none transition-transform group-hover:scale-110"></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#cedef9]/60 to-transparent rounded-tr-full z-0 pointer-events-none transition-transform group-hover:scale-110"></div>
+          {/* ▼ 装飾の左下部分 ▼ */}
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#7fc1fa]/60 to-transparent rounded-bl-full z-0 pointer-events-none transition-transform group-hover:scale-110"></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#7fc1fa]/60 to-transparent rounded-tr-full z-0 pointer-events-none transition-transform group-hover:scale-110"></div>
           
           <div className="relative z-10 flex flex-col items-center text-center gap-5">
             
@@ -40,7 +41,7 @@ const NextEventSection = () => {
 
             {/* ▼ 修正：ホバー色を紫から青系(#b0c6eb)に変更し、文字を見やすくドロップシャドウを追加 ▼ */}
             <div className="w-full sm:w-auto flex justify-center">
-              <div className="inline-flex items-center justify-center gap-2 bg-[#cedef9] text-white drop-shadow-sm px-8 py-4 rounded-full font-bold text-sm shadow-md group-hover:bg-[#b0c6eb] transition-colors duration-300 w-full sm:w-auto whitespace-nowrap">
+              <div className="inline-flex items-center justify-center gap-2 bg-[#7fc0fa] text-white drop-shadow-sm px-8 py-4 rounded-full font-bold text-sm shadow-md group-hover:bg-[#b0c6eb] transition-colors duration-300 w-full sm:w-auto whitespace-nowrap">
                 5月開催の詳細を見る
                 <ExternalLink className="w-4 h-4" />
               </div>

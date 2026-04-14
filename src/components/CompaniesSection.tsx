@@ -129,23 +129,7 @@ const CompaniesSection = () => {
         strength: "圧倒的な成長率を誇る急成長ベンチャーです。入社1〜2年でマネージャーへ早期昇格する実績が多数あり、若手が組織の中核を担って事業を牽引しています。"
       }
     },
-    { 
-      id: 6, 
-      name: "AnyMind Group", 
-      tags: ["マーケティング", "ITメガベン"], 
-      logoImage: "/logo-anymind.png",
-      url: "https://anymindgroup.com/ja/",
-      details: {
-        catchphrase: "アジアを起点に世界を牽引するテクノロジーカンパニー",
-        stats: [
-          { label: "売上規模", value: "507.1億円（2024年度連結実績）" },
-          { label: "従業員数", value: "2,000名以上（2024年時点）" },
-          { label: "グローバル", value: "アジアを中心に15ヵ国・地域、25拠点を展開" },
-          { label: "直近成長率", value: "売上高成長率+52%（2024年度実績）" }
-        ],
-        strength: "2016年の創業からわずか8年で売上507億円を叩き出す桁外れのベンチャー的成長性と、アジア15カ国に広がる25拠点のネットワークというグローバルな安定基盤を両立しているのが最大の強みです。ブランドの企画から生産、EC構築、マーケティング、物流までをワンストップで支援する独自のプラットフォームを展開しており、若手のうちから国境を越えたビジネスやダイナミックな新規事業に手触り感を持って挑むことができます。"
-      }
-    },
+    { id: 6, name: "Coming Soon", tags: ["？？？", "？？？"], isComingSoon: true },
   ];
 
   return (
@@ -156,7 +140,7 @@ const CompaniesSection = () => {
         <div className="text-center mb-10">
            <div className="mb-6">
              <h2 className="text-2xl md:text-3xl font-serif font-medium text-[#0B1E46] mb-3 tracking-wide">
-               出展企業
+               参加企業
              </h2>
              <p className="text-[#B8860B] font-serif italic text-xs tracking-widest uppercase">
                COMPANIES
