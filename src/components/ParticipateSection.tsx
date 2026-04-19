@@ -19,6 +19,13 @@ const ParticipateSection = () => {
            {/* 背景装飾 */}
            <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0B1E46] via-[#B8860B] to-[#0B1E46]"></div>
 
+           {/* ▼▼▼ シンプルなテキスト ▼▼▼ */}
+           <div className="w-full text-center mb-8 md:mb-10">
+             <p className="text-slate-600 font-medium text-[13px] md:text-sm tracking-wide">
+               ※対象大学/大学院の学生であれば、誰でもご参加可能です。
+             </p>
+           </div>
+
            {/* STEP 1 */}
            <div className="flex flex-col items-center text-center">
               <h3 className="text-xl font-serif font-bold text-[#0B1E46] mb-2">
@@ -55,7 +62,6 @@ const ParticipateSection = () => {
               
               <Button 
                 className="w-full max-w-sm bg-[#06C755] hover:bg-[#05b54d] text-white font-bold h-12 rounded shadow-md text-xl transition-transform hover:scale-105 pl-6 pr-4 flex justify-center items-center gap-2"
-                // ▼▼▼ リンク修正：公式LINEのURLを設定 ▼▼▼
                 onClick={() => window.open('https://lin.ee/26VxKEf', '_blank')}
               >
                 <span>公式LINEを追加する</span>

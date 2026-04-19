@@ -27,7 +27,7 @@ const mainCompanies = [
 ];
 
 const otherCompanies = [
-   "三井住友海上火災保険株式会社", "日本新薬株式会社", "株式会社ナハト",
+   "三井住友海上火災保険", "日本新薬", "ナハト", "オースビー"
 ];
 // ▲▲▲ 追加ここまで ▲▲▲
 
@@ -164,7 +164,7 @@ const HeroSection = () => {
                </div>
                <div className="text-left">
                   <p className="text-[9px] text-slate-400 font-bold tracking-widest uppercase">STYLE</p>
-                  <p className="text-sm font-bold text-[#0B1E46]">招待制</p>
+                  <p className="text-sm font-bold text-[#0B1E46]">特別選考あり</p>
                </div>
             </div>
 
